@@ -45,6 +45,8 @@ export default {
 
   actions: {
     test(context: ActionContext<AuthState, RootState>) {
+      context.state.validEmail = true;
+      context.state.validPassword = true;
       context.dispatch('logAttempts');
 
       const validEmail =
@@ -52,8 +54,6 @@ export default {
       const validPassword = context.state.password !== '';
 
       if (validEmail && validPassword) {
-        context.state.validEmail = true;
-        context.state.validPassword = true;
         context.dispatch('login');
       } else {
         if (!validEmail) context.state.validEmail = false;
