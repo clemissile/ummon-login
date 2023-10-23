@@ -6,6 +6,9 @@ import { Attempt } from '@/types/Attempt.type';
 const regexEmail =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
+const login = process.env.VUE_APP_EMAIL as string;
+const pass = process.env.VUE_APP_PASSWORD as string;
+
 export interface AuthState {
   email: string;
   password: string;
@@ -59,10 +62,7 @@ export default {
     },
 
     login(context: ActionContext<AuthState, RootState>) {
-      if (
-        context.state.email === 'toto@example.com' &&
-        context.state.password === '1234'
-      ) {
+      if (context.state.email === login && context.state.password === pass) {
         context.commit('SET_EMAIL', '');
         context.commit('SET_PASSWORD', '');
         notify({
