@@ -13,7 +13,6 @@ export default defineComponent({
   props: {
     text: {
       type: String,
-      required: true,
     },
     disabled: {
       type: Boolean,
@@ -31,7 +30,6 @@ export default defineComponent({
   padding: 5px;
   border: none;
   border-radius: 5px;
-  margin: 20px 0;
   cursor: pointer;
 
   &:hover {

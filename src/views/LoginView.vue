@@ -8,10 +8,8 @@
     <div class="login-card">
       <img src="@/assets/img/logo.png" alt="Logo" width="100" />
       <h1>👋 Welcome back !</h1>
-      <p>
-        Sign in to access to the dashboard (and if you don't remember your
-        credentials use <b>toto@example.com</b> and <b>1234</b>).
-      </p>
+      <p>Sign in to access to our app and your profile.</p>
+      <Hint />
       <form ref="loginForm" class="login-form">
         <CustomInput
           label="E-mail"
@@ -33,7 +31,7 @@
         />
         <CustomButton text="Login" @click.prevent="login()" />
       </form>
-      <a href="#">Mot de passe oublié ?</a>
+      <a href="#" style="margin-top: 20px">Mot de passe oublié ?</a>
       <div class="sign-up">Don't have an account ? <a href="#">Sign up</a></div>
     </div>
   </div>
@@ -44,11 +42,12 @@ import { mapActions, mapGetters } from 'vuex';
 import CustomButton from '@/components/CustomButton.vue';
 import CustomInput from '@/components/CustomInput.vue';
 import { defineComponent } from 'vue';
+import Hint from '@/components/Hint.vue';
 
 export default defineComponent({
   name: 'LoginView',
 
-  components: { CustomInput, CustomButton },
+  components: { CustomInput, CustomButton, Hint },
 
   computed: {
     ...mapGetters({
@@ -84,6 +83,10 @@ export default defineComponent({
 
   .login-form {
     width: 60%;
+
+    @media (max-width: 959px) {
+      width: 80%;
+    }
   }
 
   .login-card {
@@ -95,6 +98,11 @@ export default defineComponent({
     align-items: center;
     padding: 100px 0;
     border-radius: 20px;
+
+    @media (max-width: 959px) {
+      width: 90%;
+      padding: 50px 0;
+    }
 
     .sign-up {
       position: absolute;

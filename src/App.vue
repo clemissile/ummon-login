@@ -1,5 +1,6 @@
 <template>
   <notifications group="auth" position="top center" />
+  <notifications group="copy" position="top center" />
   <notifications group="attempts" position="bottom left" width="30%">
     <template #body="props">
       <div class="vue-notification">
