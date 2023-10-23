@@ -1,7 +1,7 @@
 <template>
   <transition name="fade" mode="out-in" appear>
     <div style="margin-top: 10px" v-if="!show">
-      <CustomButton text="Show Hint" @click="show = true" />
+      <CustomButton text="Show Hint" background @click="show = true" />
     </div>
     <div class="hint" v-else>
       <div>
@@ -65,10 +65,6 @@ export default defineComponent({
   div {
     display: flex;
     align-items: center;
-
-    button {
-      margin-left: 20px;
-    }
   }
 }
 </style>

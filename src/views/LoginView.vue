@@ -18,6 +18,7 @@
           error="Wrong e-mail format"
           :valid="validEmail"
           @changed="handleEmail"
+          background
           required
         />
         <CustomInput
@@ -27,9 +28,10 @@
           error="Password is required"
           :valid="validPassword"
           @changed="handlePassword"
+          background
           required
         />
-        <CustomButton text="Login" @click.prevent="login()" />
+        <CustomButton text="Login" background @click.prevent="login()" />
       </form>
       <a href="#" style="margin-top: 20px">Mot de passe oublié ?</a>
       <div class="sign-up">Don't have an account ? <a href="#">Sign up</a></div>

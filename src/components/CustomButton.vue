@@ -1,5 +1,8 @@
 <template>
-  <button class="custom-btn" :disabled="disabled">
+  <button
+    :class="['custom-btn', background ? 'btn-filled' : '']"
+    :disabled="disabled"
+  >
     {{ text }}
   </button>
 </template>
@@ -18,13 +21,17 @@ export default defineComponent({
       type: Boolean,
       default: false,
     },
+    background: {
+      type: Boolean,
+      default: false,
+    },
   },
 });
 </script>
 
 <style lang="scss" scoped>
 .custom-btn {
-  background-color: $primary;
+  background: transparent;
   color: $white;
   width: 100%;
   padding: 5px;
@@ -32,9 +39,13 @@ export default defineComponent({
   border-radius: 5px;
   cursor: pointer;
 
-  &:hover {
-    background-color: darken($primary, 5%);
-    transition: 200ms ease-in-out;
+  &.btn-filled {
+    background-color: $primary;
+
+    &:hover {
+      background-color: darken($primary, 5%);
+      transition: 200ms ease-in-out;
+    }
   }
 
   &:disabled,
