@@ -4,7 +4,7 @@
 
 Technical test for [Ummon HealTech](https://www.ummonhealthtech.com/home-ummon-healthtech/).
 
-## Instructions
+### Instructions
 
 Build a login page with an estethic UI and a good UX using the framework of your choice (vue, react, svelt, etc...).
 You should desing components (fields and buttons) for reusability.
