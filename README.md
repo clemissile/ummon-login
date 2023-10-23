@@ -2,7 +2,15 @@
 
 ## About The Project
 
-Technical test for Ummon HealTech.
+Technical test for [Ummon HealTech](https://www.ummonhealthtech.com/home-ummon-healthtech/).
+
+## Instructions
+
+Build a login page with an estethic UI and a good UX using the framework of your choice (vue, react, svelt, etc...).
+You should desing components (fields and buttons) for reusability.
+You may use your favorite css tools (SCSS, Tailwind, etc...).
+Bonus: The login page can display an error message when the wrong credentials are used (mock a simple validation in JS).
+Bonus 2: You can add a table component that diplays the login tries that are happening.
 
 ### Built With
 
